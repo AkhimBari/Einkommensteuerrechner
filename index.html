@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" onsubmit="return false">
+        <div>
+            <h1>
+                Einkommensteuerrechner
+            </h1>
+        </div>
+        <div>
+            <label for="year">Jahr</label>
+            <select name="year" id="year">
+                <option value="2021">2021</option>
+                <option value="2020">2020</option>
+                <option value="2019">2019</option>
+            </select>
+        </div>
+        <div>
+            <label for="taxIncome">zu versteuerendes Einkommen:</label>
+            <input type="text" id="taxIncome" name="taxIncome">
+        </div>
+        <div>
+            <label for="einzel">Art der Veranlagung</label>
+            <input type="radio" id="einzel" name="datum" checked="checked">
+            <label for="zusammen">Einzelveranlagung</label>
+            <input type="radio" id="zusammen" name="datum">
+            <label for="">Zusammenveranlagung</label>
+        </div>
+        <div class="kirche">
+            <label for="">Kirchensteuer</label>
+            <select name="" id="church">
+                <option value="keine">keine</option>
+                <option value="8">8%(Bayern)</option>
+                <option value="9">9%(Rest)</option>
+            </select>
+        </div>
+        <div>
+            <h2>
+                Ergebnis
+            </h2>
+        </div>
+        <div>
+            <p>
+                Einkommenssteuer:
+            </p>
+
+            <p id="steuerInput">
+
+            </p>
+        </div>
+        <div>
+            <p>
+                Kirchensteuer:
+            </p>
+            <p id="churchInput">
+
+            </p>
+        </div>
+        <div>
+            <p>
+                Gesamtbelastung:
+            </p>
+            <p id="endResult">
+
+            </p>
+        </div>
+        <div class="btn">
+            <button onclick="press()">Berechnen</button>
+        </div>
+    </form>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+/* ++++++ Globale Einstellungen ++++++ */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    max-width: 1440px;
+}
+
+/* ++++++ Globale Einstellungen ++++++ */
+
+
+
+form {
+    border: 5px solid brown;
+    background-color: rgb(49, 48, 48);
+    border-radius: 3px;
+    width: 55%;
+    margin: 15% auto;
+    color: white;
+}
+
+div {
+    padding: 9px 0 15px 30px;
+    font-size: 1rem;
+}
+
+button {
+    background-color: crimson;
+    border-radius: 7px;
+    color: white;
+    width: 450px;
+    height: 40px;
+    font-size: 1.5rem;
+}
+
+h1, h2 {
+    color: beige;
+}
+
+.kirche {
+    border-bottom: 3px solid white;
+}

@@ -12,7 +12,15 @@ let lastResult;
 
 
 
+
 press = () => {
+
+
+
+
+
+
+    // ########### 2021 Start Einzel ########### //
 
 
 
@@ -54,10 +62,55 @@ press = () => {
             endResult.innerHTML = lastResult.toFixed(2) + " €";
         }
 
+        // ########### 2021 Ende Einzel ########### //
+
+        // ########### 2021 zusammen ########### //
+
+        if (zusammen.checked) {
+            if ((taxIncome.value / 2) <= 9744) {
+                steuerInput.innerHTML = 0 + " €";
+                churchInput.innerHTML = 0 + " €";
+                endResult.innerHTML = 0 + " €";
+            }
+
+            if ((taxIncome.value / 2) >= 9745 && taxIncome.value <= 14753) {
+                let result1 = ((taxIncome.value / 2) - 9744) / 10000
+                lastResult = (995.21 * result1 + 1400) * result1
+                steuerInput.innerHTML = 2 * lastResult.toFixed(2) + " €";
+                churchInput.innerHTML = 0 + " €";
+                endResult.innerHTML = 2 * lastResult.toFixed(2) + " €";
+            }
+
+            if (14754 <= (taxIncome.value / 2) && (taxIncome.value / 2) <= 57918) {
+                let result2 = ((taxIncome.value / 2) - 14753) / 10000
+                lastResult = (208.85 * result2 + 2397) * result2 + 950.96;
+                steuerInput.innerHTML = 2 * lastResult.toFixed(2) + " €";
+                churchInput.innerHTML = 0 + " €";
+                endResult.innerHTML = 2 * lastResult.toFixed(2) + " €";
+            }
+
+
+            if (57919 <= (taxIncome.value / 2) && (taxIncome.value / 2) <= 274612) {
+                lastResult = (0.42 * (taxIncome.value / 2)) - 9136.63
+                steuerInput.innerHTML = 2 * lastResult.toFixed(2) + " €";
+                churchInput.innerHTML = 0 + " €";
+                endResult.innerHTML = 2 * lastResult.toFixed(2) + " €";
+            }
+
+            if (274613 <= (taxIncome.value / 2)) {
+                lastResult = (0.45 * taxIncome.value) - 17374.99
+                steuerInput.innerHTML = 2 * lastResult.toFixed(2) + " €";
+                churchInput.innerHTML = 0 + " €";
+                endResult.innerHTML = 2 * lastResult.toFixed(2) + " €";
+            }
+
+            
+        }
+
     }
+    // ########### 2021 zusammen ########### //
 
-
-    // ########### 2020 Start ########### 
+    // ########### 2020 Start Einzel ########### //
 
 
     if (year.value == 2020) {
@@ -99,10 +152,9 @@ press = () => {
         }
     }
 
-    // ########### 2020 Start ########### 
+    // ########### 2020 Ende Einzel ########### //
 
-
-
+    // ########### 2019 Start Einzel ########### //
     if (year.value == 2019) {
         if (taxIncome.value <= 9168) {
             steuerInput.innerHTML = 0 + " €";
@@ -142,16 +194,10 @@ press = () => {
         }
     }
 
+    // ########### 2019 Ende Einzel ########### //
 
 
 
-
-
-
-    if (zusammen.checked) {
-        // taxIncome.value = taxIncome.value * 2;
-
-    }
 
 
 
@@ -165,6 +211,74 @@ press = () => {
         churchInput.innerHTML = (resultChurch - lastResult).toFixed(2) + " €";
         endResult.innerHTML = resultChurch.toFixed(2) + " €";
     }
+
+
+
+    if (zusammen.checked) {
+        if (church.value == 9) {
+            let resultChurch = lastResult * 1.09;
+            churchInput.innerHTML = ((resultChurch - lastResult) * 2).toFixed(2) + " €";
+            endResult.innerHTML = 2 * resultChurch.toFixed(2) + " €";
+        }
+        if (church.value == 8) {
+            let resultChurch = lastResult * 1.08;
+            churchInput.innerHTML = ((resultChurch - lastResult) * 2).toFixed(2) + " €";
+            endResult.innerHTML = 2 * resultChurch.toFixed(2) + " €";
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -197,12 +311,6 @@ press = () => {
 
 
 
-/*
-if (zusammen.checked) {
-    taxIncome.value = taxIncome.value / 2;
-} else {
-    taxIncome.value = taxIncome.value;
-} */
 
 
 
